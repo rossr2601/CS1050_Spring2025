@@ -145,7 +145,7 @@ This is moving a larger data type into a **smaller** bucket. You have to *explic
 
 How the program executes division has everything to do with what **data type** you are using. 
 
-<ins>`1/2` will output `0`</ins>  
+`1/2` will output `0`  
 That's weird? Why would it do that? It's because you used two values that were `int`. The result of this operation is technically a double, because it is `0.5`.
 
 You have to *explicitly* state what type of output you want if it is something other than what is being used initially. 
@@ -154,6 +154,7 @@ You have to *explicitly* state what type of output you want if it is something o
 
 ### What is **hard coding** and why is it bad?
 
-Hardcoding is when you put in a value 
+Hardcoding is when you put in a value into the code itself instead of assigning a constant to use for it. This makes your code not only more readable, but also more adaptable. Instead of having to go through and change each instance of the constant number being used, you just have to change it once.
 
 ## Module 02: Predefined Classes, Methods, and Decision Structures ##
+
