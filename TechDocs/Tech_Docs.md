@@ -158,3 +158,40 @@ Hardcoding is when you put in a value into the code itself instead of assigning 
 
 ## Module 02: Predefined Classes, Methods, and Decision Structures ##
 
+### Packages ###
+
+Packages are essentially an umbrella term for classes that share similar functions and characteristics.
+
+- Prevent naming conflicts by allowing classes with the same name to exist in different packages, like **college.staff.cse.Employee** and **college.staff.ee.Employee**
+-  They make it easier to organize, locate, and use classes, interfaces, and other components.
+
+You may have to import packages/classes sometimes. For example, to use the **Scanner** class, you must put the following *before* you implement the main method.
+
+```java
+import java.util.Scanner
+```
+
+The **java.util** is the package, and Scanner is the specific class that you are calling.
+
+### Classes ###
+
+Every Java program must have a **class**. This is like a set of blueprints that you can call from to execute specific functions. 
+
+For example the *Math* class has useful methods within it that relate to mathematical computation.
+
+Once you import the desired class, you can then use **methods** within that class to create objects to utilize within your code.
+
+#### Creating an Object from a Class ####
+
+To use imported classes, you must first create an object that utilizes the blueprint of them. 
+
+```java
+Point originOne = new Point(23, 94);
+Rectangle rectOne = new Rectangle(originOne, 100, 200);
+Rectangle rectTwo = new Rectangle(50, 100);
+```
+
+`Point` is a class, `originOne` is the object name, and `new Point(23,94);` is giving instructions from the point class to the new object.
+
+There are some classes that you do not have to create objects from before utilizing them. An example of this would be the Math or System class. At any point within the program you can call on these classes without having to create an object first.
+
