@@ -201,4 +201,3 @@ Methods are essentially blueprints within a class. They have formal parameters t
 
 Some classes/methods are **already** imported into java by default. For example, you do not need to explicitly import the `Math` class or the `System` class in order to utilize methods from them. These are baked into the `java.lang` and that is a package that is *auto imported*.
 
-![IDE Methods](TechDoc_Images/Method%20in%20IDE%20example.png)
