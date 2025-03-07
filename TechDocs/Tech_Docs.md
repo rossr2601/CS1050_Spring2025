@@ -6,6 +6,16 @@
 
 ## Module 01: Programming Fundamentals and Java ##
 
+- [Naming Conventions](#naming-conventions)
+- [Types of Errors](#types-of-errors)
+    - [Syntax Errors](#syntax-errors)
+    - [Runtime Errors](#runtime-errors)
+    - [Logic Errors](#logic-errors)
+- [Primitive Data Types](#primitive-data-types)
+    - [Implicit vs Explicit Casting](#implicit-vs-explicit-casting)
+- [How does division work?](#how-does-division-work)
+- [What is hard coding?](#what-is-hard-coding-and-why-is-it-bad)
+
 ### Naming Conventions ###
 
 These are a set of rules that each type of programming language has (ex: java, python, css) to help make code more **readable**.
@@ -158,6 +168,13 @@ Hardcoding is when you put in a value into the code itself instead of assigning 
 
 ## Module 02: Predefined Classes, Methods, and Decision Structures ##
 
+- [Packages](#packages)
+- [Classes](#classes)
+    - [Creating an Object](#creating-an-object-from-a-class)
+- [Methods](#methods)
+- [Math Class](#math-class)
+
+
 ### Packages ###
 
 Packages are essentially an umbrella term for classes that share similar functions and characteristics.
@@ -202,3 +219,33 @@ Methods are essentially blueprints within a class. They have formal parameters t
 Some classes/methods are **already** imported into java by default. For example, you do not need to explicitly import the `Math` class or the `System` class in order to utilize methods from them. These are baked into the `java.lang` and that is a package that is *auto imported*.
 
 ![IDE Methods](TechDoc_Images/Method%20in%20IDE%20example.png)
+
+In Eclipse, you can type in the **class** name follwed by a period and it will pull up every method that you can call from that class as well as descriptions on what each method does.
+
+### Math Class ###
+
+The Math class is an already imported class and does not need new objects created in order to use it.
+
+These types of methods are called *static methods* 
+
+- Allow you to call them without creating an object first
+- Because of this are NOT associated with a specific object
+- To call static methods you use the `ClassName.methodname`
+
+Here is an example of what <ins>**not**</ins> to do
+
+```java
+Math myMath = new Math()
+```
+
+You can just call on the Math class whenever you need it. In fact, if you try and create an object from Math, you will get a compiler error.
+
+```java
+int number = (int) Math.random()
+```
+
+As you can see, we used the method `random` without have to instantiate an object from it first. The parenthesis ( ) after the method illustrates that it will hold a value in the **future**. In this instance the random method generates a pseudo-random number, which would then be held in the open parenthesis.
+
+#### Why all the fuss? ####
+
+The reason that these methods exist is to have an easy way to execute complex tasks. I don't need to re-invent the wheel so to speak. I don't **need** to know how the `Math.random` method works under the hood, I just need it to work.
