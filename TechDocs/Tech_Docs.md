@@ -249,3 +249,5 @@ As you can see, we used the method `random` without have to instantiate an objec
 #### Why all the fuss? ####
 
 The reason that these methods exist is to have an easy way to execute complex tasks. I don't need to re-invent the wheel so to speak. I don't **need** to know how the `Math.random` method works under the hood, I just need it to work.
+
+Testing for terminal git
