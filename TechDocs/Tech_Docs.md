@@ -172,6 +172,7 @@ Hardcoding is when you put in a value into the code itself instead of assigning 
 - [Classes](#classes)
     - [Creating an Object](#creating-an-object-from-a-class)
 - [Methods](#methods)
+    - [Method Overloading](#method-overloading)
 - [Math Class](#math-class)
 
 
@@ -222,6 +223,16 @@ Some classes/methods are **already** imported into java by default. For example,
 
 In Eclipse, you can type in the **class** name follwed by a period and it will pull up every method that you can call from that class as well as descriptions on what each method does.
 
+#### Method Overloading ####
+
+There are some instances where a class may have methods with the *same* name but **different parameters**.
+
+This is like when `println` can be used for `int`, `char`, **and** `string`. All of these data types require different amounts of storage amounts, but you can specify which type you want within the IDE.
+
+![Println Example](TechDoc_Images/Println%20example.png)
+
+This overall increases the readability of the program which helps developers who come after you make informed choices when they are changing things. Much easier to know that any time it says `println` you know something is being put out to the console.
+
 ### Math Class ###
 
 The Math class is an already imported class and does not need new objects created in order to use it.
@@ -250,4 +261,3 @@ As you can see, we used the method `random` without have to instantiate an objec
 
 The reason that these methods exist is to have an easy way to execute complex tasks. I don't need to re-invent the wheel so to speak. I don't **need** to know how the `Math.random` method works under the hood, I just need it to work.
 
-Testing for terminal git
