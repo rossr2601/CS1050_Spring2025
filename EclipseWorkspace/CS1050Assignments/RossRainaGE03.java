@@ -5,6 +5,10 @@
 /**
  * 
  */
+
+import java.util.Scanner;
+
+
 public class RossRainaGE03 {
 
 	/**
@@ -13,6 +17,12 @@ public class RossRainaGE03 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+	
+		
+		public static  projectinfo(String[] args)
+		{
+			
+		}
 	}
 
 }
