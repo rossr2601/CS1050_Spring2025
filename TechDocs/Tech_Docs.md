@@ -272,3 +272,25 @@ randomMonth = (int) (Math.random()*12)
 In the above example, there are 12 months in a year so that is the range that we want it to be.
 
 ### Chars ###
+
+Chars are single pieces of information that "under the hood" connect to ASCII values that are stored and then represented.
+
+Because they are connected to ASCII numbers, you can cast `char` values into numeric form. If the data type is smaller than the char, the char is "cut off" at the largest bit that it can hold.
+
+![CharCastingExample](TechDoc_Images/CharCastingEx.png)
+
+Important thing to note: When storing chars you have to use single quotes **(``)**.
+
+### Strings ###
+
+Strings are essentially arrays that hold multiple char values. This is a non-primitive data type because it holds **multiple values**. 
+
+[comment]: # (Connect array to module 4 when you get to it)
+
+This is the way that we declare Strings in this course.
+
+```java
+String firstName = ("Raina")
+```
+
+![String/CharErrorExample](TechDoc_Images/CharErrorsEx.png)
