@@ -181,6 +181,8 @@ Hardcoding is when you put in a value into the code itself instead of assigning 
 - [Booleans](#booleans)
     - [Relational Operators](#relational-operators)
 - [If/Else Commands](#ifelse-commands)
+- [Nested Ifs](#nested-if-statements)
+- [Multi-Way Ifs](#multi-way-if-statments)
 
 ### Packages ###
 
@@ -337,9 +339,9 @@ You can also use these in conjunction with the following operators when there ar
 |------|-----|----------------------|--------|
 | &&   | And |  R < 0 && S > 0      | false  |
 | l l  | Or  |  R < 0 l l S > 0     | true   |
-| !=   | Not |  R > 0 && !S < 0     | true   |
+| !    | Not |  R > 0 && !S < 0     | true   |
 
-The `!` is a modifier by saying something is not (within a truth table).
+The `!` is a modifier by reversing the logical value of the expression.
 
 ### If/Else Commands ###
 
@@ -433,3 +435,13 @@ else
 ```
 
 At the bottom you'll notice that instead of using another `else if` I used simply `else`. This is because I want **all** other conditions to fall into this else statement.
+
+## Quick References ##
+
+### Reading from the users keyboard ###
+
+```java
+Scanner input = Scanner new Scanner(System.in)
+
+double classParticipation = input.nextDouble();
+```
