@@ -339,7 +339,7 @@ You can also use these in conjunction with the following operators when there ar
 | l l  | Or  |  R < 0 l l S > 0     | true   |
 | !=   | Not |  R > 0 && !S < 0     | true   |
 
-The `!` is a modifier by saying something is not within a truth table.
+The `!` is a modifier by saying something is not (within a truth table).
 
 ### If/Else Commands ###
 
@@ -378,3 +378,58 @@ if (number1 < number 2)
 The second println is trying to call on a variable that is **only** available inside the if statement. This is to promote security and readability. Imagine trying to figure out where the temp variable is and it's in some random if command.
 
 Make sure to pay attention to where you are putting your curly braces `{ }` and your semicolons `;`. If you put these in the wrong spots it causes logic errors because the program cannot read your code in the order that it is intended.
+
+### Nested If Statements ###
+
+If there are a series of conditions that are based on previous inputs then you would use a nested if. It is called nested because it can lead to other if/else statements within the same overall block.
+
+```java
+System.out.println("Let's play 20 questions. Choose an animal and I will try to guess it!");
+    Scanner scan = new Scanner(System.in);
+  
+    System.out.println("Is it a mammal (y/n)?");
+    String answer = scan.nextLine();
+    if (answer.equals("y")) 
+    {
+      System.out.println("Is it a pet (y/n)?");
+      answer = scan.nextLine();
+      
+      if (answer.equals("y")) 
+      {
+           System.out.println("I guess a dog!");
+      }
+      else 
+      { 
+         System.out.println("I guess an elephant!");   
+      }
+    }      
+    else 
+    { // not a mammal  
+        System.out.println("I guess a bird!");
+    }
+```
+
+### Multi-Way If Statments ###
+
+If there is more than **one** output based on the input then you use mulit-way ifs. The nice thing about these if that the program will follow sequentially down until it finds something that is true and then it will *exit*. They are easy to spot because instead of just having `if` or `else` it will have `else if`.
+
+```java
+if (grade >= 90)
+{
+    System.out.println("You got an A");
+}
+else if (grade >= 80)
+{
+    System.out.println("You got a B");
+}
+else if (grade >= 70)
+{
+    System.out.println("You got a C");
+}
+else
+{
+    System.out.println("Take the class again");
+}
+```
+
+At the bottom you'll notice that instead of using another `else if` I used simply `else`. This is because I want **all** other conditions to fall into this else statement.
