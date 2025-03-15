@@ -180,6 +180,7 @@ Hardcoding is when you put in a value into the code itself instead of assigning 
     - [Trim White Space](#trim-white-space-from-strings)
 - [Booleans](#booleans)
     - [Relational Operators](#relational-operators)
+- [If/Else Commands](#ifelse-commands)
 
 ### Packages ###
 
@@ -339,3 +340,41 @@ You can also use these in conjunction with the following operators when there ar
 | !=   | Not |  R > 0 && !S < 0     | true   |
 
 The `!` is a modifier by saying something is not within a truth table.
+
+### If/Else Commands ###
+
+If/else statements are used when we are deciding what course of action to take based on whether the condition is true or not.
+
+You can use if statements just on their own, because if it does not match the boolean it will simply exit.
+
+But if you want to direct the code to do a specific thing if the boolean is false, you need to follow it up with an else statement.
+
+```java
+if (grade < 60)
+{
+    System.out.println("Come to office hours")
+}
+else
+{
+    System.out.println("Passed")
+}
+```
+
+You have to be careful on where you are placing your declarations and initializations of variables. There is the practice of **least privileged** access. So if a variable is only needed in one section of the code, then it should only be within the *scope* of that section.
+
+You can easily tell the **scope** of something by looking at where the curly brackets { } start and end. 
+
+```java
+if (number1 < number 2)
+{
+    int temp = number1;
+    number1 = number2;
+    number2 = temp;
+    System.out.println("Temp value is " + temp)
+}
+    System.out.println("Temp value is " + temp)
+```
+
+The second println is trying to call on a variable that is **only** available inside the if statement. This is to promote security and readability. Imagine trying to figure out where the temp variable is and it's in some random if command.
+
+Make sure to pay attention to where you are putting your curly braces `{ }` and your semicolons `;`. If you put these in the wrong spots it causes logic errors because the program cannot read your code in the order that it is intended.
