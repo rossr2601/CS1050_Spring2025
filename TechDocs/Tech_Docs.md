@@ -175,6 +175,11 @@ Hardcoding is when you put in a value into the code itself instead of assigning 
     - [Method Overloading](#method-overloading)
 - [Math Class](#math-class)
 - [Random Number Generator](#create-random-integers)
+- [Chars](#chars)
+- [Strings](#strings)
+    - [Trim White Space](#trim-white-space-from-strings)
+- [Booleans](#booleans)
+    - [Relational Operators](#relational-operators)
 
 ### Packages ###
 
@@ -293,4 +298,44 @@ This is the way that we declare Strings in this course.
 String firstName = ("Raina")
 ```
 
+Below are errors that can occur if you make a couple different types of mistakes.
+
 ![String/CharErrorExample](TechDoc_Images/CharErrorsEx.png)
+
+#### Trim White Space from Strings ####
+
+Sometimes you need to get ride of extra fluff that a user might add on accident. This is where the method `trim` can come in handy. It will eliminate the white space before and after the first/last chars and leave the white space between them alone.
+
+```java
+String messy = "   Long string with white spaces    ";
+System.out.println(messy.trim());
+
+Displays:
+Long string with white spaces
+```
+### Booleans ###
+
+Booleans are a primitive data type that can only hold true or false. They are used with loops to decide whether the code will go into the loop or not.
+
+#### Relational Operators ####
+
+These are used to help the boolean decide if something is indeed true or false.
+
+| Java | Math | Example R = 5 | Result |
+|------|------|---------------|--------|
+| <    | <    | R < 0         | false  |
+| <=   | ≤    | R <= 0        | false  |
+| >    | >    | R > 0         | true   |
+| >=   | ≥    | R >= 0        | true   |
+| ==   | =    | R == 0        | false  |
+| !=   | ≠    | R != 0        | true   |
+
+You can also use these in conjunction with the following operators when there are two conditions that you are checking for.
+
+| Java | Eng | Example R = 5, S = 1 | Result |
+|------|-----|----------------------|--------|
+| &&   | And |  R < 0 && S > 0      | false  |
+| l l  | Or  |  R < 0 l l S > 0     | true   |
+| !=   | Not |  R > 0 && !S < 0     | true   |
+
+The `!` is a modifier by saying something is not within a truth table.
