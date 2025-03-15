@@ -19,6 +19,11 @@ public class RossRainaGE03 {
 
 		System.out.print("CS1050 Final Grades");
 		
+		
+		double getValidGrade(int min, int max)
+		{
+			
+		}
 	}
 
 }
