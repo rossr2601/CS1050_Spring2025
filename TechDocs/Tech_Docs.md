@@ -3,6 +3,7 @@
 **Table Of Contents**
 - [Module 01](#module-01-programming-fundamentals-and-java)
 - [Module 02](#module-02-predefined-classes-methods-and-decision-structures)
+- [Quick References](#quick-references)
 
 ## Module 01: Programming Fundamentals and Java ##
 
@@ -339,7 +340,7 @@ You can also use these in conjunction with the following operators when there ar
 |------|-----|----------------------|--------|
 | &&   | And |  R < 0 && S > 0      | false  |
 | l l  | Or  |  R < 0 l l S > 0     | true   |
-| !    | Not |  R > 0 && !S < 0     | true   |
+| !    | Not |  !R < 0 && S > 0     | true   |
 
 The `!` is a modifier by reversing the logical value of the expression.
 
