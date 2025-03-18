@@ -179,11 +179,13 @@ Hardcoding is when you put in a value into the code itself instead of assigning 
 - [Chars](#chars)
 - [Strings](#strings)
     - [Trim White Space](#trim-white-space-from-strings)
+    - [Booleans in Strings](#using-boolean-values-in-strings)
 - [Booleans](#booleans)
     - [Relational Operators](#relational-operators)
 - [If/Else Commands](#ifelse-commands)
 - [Nested Ifs](#nested-if-statements)
 - [Multi-Way Ifs](#multi-way-if-statments)
+- [Switch Statements](#switch-statements)
 
 ### Packages ###
 
@@ -317,6 +319,17 @@ System.out.println(messy.trim());
 Displays:
 Long string with white spaces
 ```
+
+#### Using Boolean Values in Strings ####
+
+You would think using the equality operator (==) with strings is how you compare two strings but if you use the equality operator to compare two strings, it is not doing what you think all the time.
+
+Instead use methods to compare strings.
+
+```java
+userContinue.equals("y")
+```
+
 ### Booleans ###
 
 Booleans are a primitive data type that can only hold true or false. They are used with loops to decide whether the code will go into the loop or not.
@@ -436,6 +449,49 @@ else
 ```
 
 At the bottom you'll notice that instead of using another `else if` I used simply `else`. This is because I want **all** other conditions to fall into this else statement.
+
+### Switch Statements ###
+
+Switch statements are used only when you are getting **exact** values. This is also the only place that you will use `break`.
+
+```java
+int numDay=6;
+		
+        switch (numDay){
+	        case 1 :{ 
+	           System.out.println("Yeah! we have Java class on Monday."); 
+	           break;
+	        } 
+	        case 2 :{
+	           System.out.println("Its Tuesday and one more day until Java class again."); 
+	           break;
+	        } 
+	        case 3 :{ 
+	           System.out.println("Its Wednesday and time for Java."); 
+	           break;
+	        }     
+	        case 4 :{ 
+	           System.out.println("Its Thursday and I miss Java class.");
+	           break; 
+	        }     
+	        case 5 :{ 
+	           System.out.println("TGIF, but I will work on some Java.");
+	           break;
+	        }       
+	        case 6 :
+	        case 7 :{ 
+	            System.out.println("Hurray, Its the weekend! Write Java code."); 
+	            break;
+	         }        	 
+	        default :{
+	                System.out.println("Wrong entry!");
+	        }
+       }//end switch
+```
+
+After each **case** there is a `break`. You'll notice that some cases don't have any information in them. This is because the action taken by the computer is the *same* as the one below and thus it falls through.
+
+In this example `case 6` and `case 7` share the same output.
 
 ## Quick References ##
 
