@@ -32,8 +32,20 @@ public class RossRainaGE03 {
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Enter Class Participation grade: ");
+		System.out.println("Enter Class Participation Grade: ");
 		double classParticipation  =  getValidGrade(MIN_GRADE, MAX_GRADE, input);
+		
+		System.out.println("Enter Guided Exploration Grade: ");
+		double guidedExploration = getValidGrade(MIN_GRADE, MAX_GRADE, input);
+		
+		System.out.println("Enter Quiz Grade: ");
+		double quizzes = getValidGrade(MIN_GRADE, MAX_GRADE, input);
+		
+		System.out.println("Enter Project Iteration Grade: ");
+		double projectIteration = getValidGrade(MIN_GRADE, MAX_GRADE, input);
+		
+		System.out.println("Enter Final Exam Grade: ");
+		double finalExam = getValidGrade(MIN_GRADE, MAX_GRADE, input);
 
 		
 	}
@@ -68,10 +80,10 @@ public class RossRainaGE03 {
 		
 		System.out.println("\nGrade Ranges\n");
 		System.out.println("A: 90 to 100");
-		System.out.println("B: 80 to <90");
-		System.out.println("C: 70 to <80");
-		System.out.println("D: 60 to <70");
-		System.out.println("F: <60");
+		System.out.println("B: 80 to < 90");
+		System.out.println("C: 70 to < 80");
+		System.out.println("D: 60 to < 70");
+		System.out.println("F: < 60");
 		
 		
 	}
