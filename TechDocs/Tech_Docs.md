@@ -3,6 +3,7 @@
 **Table Of Contents**
 - [Module 01](#module-01-programming-fundamentals-and-java)
 - [Module 02](#module-02-predefined-classes-methods-and-decision-structures)
+- [Module 03](#module-03-loops-and-software-development)
 - [Quick References](#quick-references)
 
 ## Module 01: Programming Fundamentals and Java ##
@@ -492,6 +493,112 @@ int numDay=6;
 After each **case** there is a `break`. You'll notice that some cases don't have any information in them. This is because the action taken by the computer is the *same* as the one below and thus it falls through.
 
 In this example `case 6` and `case 7` share the same output.
+
+## Module 03: Loops and Software Development ##
+
+- [Increment & Decrement](#increment-and-decrement)
+- [While Loops](#while-loops)
+    - [While Loop Design](#while-loop-design)
+
+### Increment and Decrement ###
+
+There can be use cases where you want to maintain some sort of counter as you work through a loop. An example of this would be in summing a set of numbers.
+
+The characters you would use is `i++` or `i--`. These both move by one in either direction. Instead of `i`, you would put the name of the variable that you are incrementing/decrementing.
+
+```java
+int max = 5;
+sum = 0;
+int count = 0;
+		
+	for (int num = 0; num <= max; num++)
+		{sum = num + sum;
+		System.out.println(sum);
+		}
+```
+
+### While Loops ###
+
+These are used to check if a *boolean* expression is true or false. If it is true, then it enters into the body of while.
+
+![WhileLoop Reference](TechDoc_Images/WhileLoop_reference.png)
+
+In the example below, we are utilizing our logic operators. In the while loop **parameters** it is saying while number1 + number2 does **not** equal answer. This is where these [boolean](#relational-operators) expressions are very helpful.
+
+```java 
+ int number1 = (int)(Math.random() * 10);
+    int number2 = (int)(Math.random() * 10);
+
+    // Create a Scanner
+    Scanner input = new Scanner(System.in);
+
+    System.out.print(
+      "What is " + number1 + " + " + number2 + "? ");
+    int answer = input.nextInt();
+    
+    while (number1 + number2 != answer) {
+      System.out.print("Wrong answer. Try again. What is " 
+        + number1 + " + " + number2 + "? ");
+      answer = input.nextInt();
+    }
+
+    System.out.println("You got it!");
+```
+
+While loops **MUST** contain statement to change loop control. Otherwise you will create an infinite loop which is not what you ever want to do.
+
+#### While Loop Design ###
+
+1. Figure out what part of your code needs to be repeated
+2. Place that part of your code into a loop
+3. Determine what condition the loop checks
+4. Make sure you have code in the body that eventually causes the condition to become false
+
+<ins>While loop:</ins>
+Condition is checked **before** the loop body is executed
+    
+<ins>Do - while loop:</ins> condition is checked **after** the loop body is executed
+
+### Sentinel Values ###
+
+These are values that can change the condition of a loop based on a *users* input.
+
+```java
+ int sum = 0;
+    while (data != 0) {
+        sum += data;
+
+        // Read the next data
+        System.out.print("Enter an integer (the input ends if it is 0): ");
+        data = input.nextInt();
+    }
+```
+
+This gives the user an option on whether or not to repeat the loop.
+
+### Do-While Loop
+
+This loop functions the same as a while loop, but it will execute **at least** once. While loops have the ability to be bypassed whereas do while *has* to execute at least once. 
+
+![DoWhile Reference](TechDoc_Images/DoWhile_Reference.png)
+
+```java
+//Initializes the loop control variable
+int counter = 1; 
+
+System.out.printf("Count before loop starts is %d ",counter);
+
+//do while loop will execute once then check condition 
+do 
+{	
+	//Changes the loop control variable
+	counter++;	
+	System.out.printf("Count is %d \n",counter);
+				
+} while (counter <= 5); //checks condition
+```
+
+For most loops a semicolon `;` is a death sentence. But for do while's you **need** the `;`.
 
 ## Quick References ##
 
