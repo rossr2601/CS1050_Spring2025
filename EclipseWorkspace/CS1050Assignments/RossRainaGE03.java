@@ -32,20 +32,24 @@ public class RossRainaGE03 {
 		
 		Scanner input = new Scanner(System.in);
 		
+		String userContinue = "n";
+		
+		do
+		{
 		// user prompting to input grades
-		System.out.println("\nEnter Class Participation Grade: ");
+		System.out.print("\nEnter Class Participation Grade: ");
 		double classParticipation  =  getValidGrade(MIN_GRADE, MAX_GRADE, input);
 		
-		System.out.println("Enter Guided Exploration Grade: ");
+		System.out.print("Enter Guided Exploration Grade: ");
 		double guidedExploration = getValidGrade(MIN_GRADE, MAX_GRADE, input);
 		
-		System.out.println("Enter Quiz Grade: ");
+		System.out.print("Enter Quiz Grade: ");
 		double quizzes = getValidGrade(MIN_GRADE, MAX_GRADE, input);
 		
-		System.out.println("Enter Project Iteration Grade: ");
+		System.out.print("Enter Project Iteration Grade: ");
 		double projectIteration = getValidGrade(MIN_GRADE, MAX_GRADE, input);
 		
-		System.out.println("Enter Final Exam Grade: ");
+		System.out.print("Enter Final Exam Grade: ");
 		double finalExam = getValidGrade(MIN_GRADE, MAX_GRADE, input);
 
 		// final grade calculation
@@ -55,11 +59,17 @@ public class RossRainaGE03 {
 				+(PI_WEIGHT*projectIteration)
 				+(FE_WEIGHT*finalExam));
 		
-		System.out.println("Final Percent: " + finalGrade + "%");
+		System.out.println("\nFinal Percent: " + finalGrade + "%");
 		
 		// print final letter grade
 		System.out.println("Final Letter Grade: " + determineLetterGrade(finalGrade));
 		
+		//sentinel value to continue or terminate
+		
+		System.out.print("Do you want to input another student's grades? (y/n): ");
+		userContinue = input.next();
+		
+		} while (userContinue.equals("y"));
 	}
 
 	public static double getValidGrade (double MIN_GRADE, double MAX_GRADE, Scanner input) {
