@@ -49,11 +49,16 @@ public class RossRainaGE03 {
 		double finalExam = getValidGrade(MIN_GRADE, MAX_GRADE, input);
 
 		// final grade calculation
-		int finalGrade = (int)((CP_WEIGHT*classParticipation)
+		double finalGrade = ((CP_WEIGHT*classParticipation)
 				+(GE_WEIGHT*guidedExploration)
 				+(Q_WEIGHT*quizzes)
 				+(PI_WEIGHT*projectIteration)
 				+(FE_WEIGHT*finalExam));
+		
+		System.out.println("Final Percent: " + finalGrade + "%");
+		
+		// print final letter grade
+		System.out.println("Final Letter Grade: " + determineLetterGrade(finalGrade));
 		
 	}
 
@@ -73,7 +78,6 @@ public class RossRainaGE03 {
 			}
 		}
 		return grade;
-	
 	}
 	
 	public static void programInfo (double CP_WEIGHT, double GE_WEIGHT, double Q_WEIGHT, double PI_WEIGHT, double FE_WEIGHT) {
@@ -91,8 +95,34 @@ public class RossRainaGE03 {
 		System.out.println("C: 70 to < 80");
 		System.out.println("D: 60 to < 70");
 		System.out.println("F: < 60");
-		
-		
 	}
+	
+	public static char determineLetterGrade(double finalGrade)
+	{
+		char letterGrade = ' ';
+			
+		if (finalGrade >= 90)
+		{
+			letterGrade =  'A';
+		}
+		else if (finalGrade >= 80)
+		{
+			letterGrade = 'B';
+		} 
+		else if (finalGrade >= 70)
+		{
+			letterGrade = 'C';
+		} 
+		else if (finalGrade >= 60)
+		{
+			letterGrade = 'D';
+		} 
+		else
+		{
+			letterGrade = 'F';
+		}
+		return letterGrade;
+	}
+
 	
 }
