@@ -21,7 +21,14 @@ public class RossRainaGE03 {
 		final double MIN_GRADE = 0;
 		final double MAX_GRADE = 105;
 		
-		System.out.println("CS1050 Final Grades");
+		final double CP_WEIGHT = 0.1;
+		final double GE_WEIGHT = 0.2;
+		final double Q_WEIGHT = 0.25;
+		final double PI_WEIGHT = 0.25;
+		final double FE_WEIGHT = 0.2;
+		
+		System.out.println("CS1050 Final Grades\n");
+		programInfo(CP_WEIGHT,GE_WEIGHT,Q_WEIGHT,PI_WEIGHT,FE_WEIGHT);
 		
 		Scanner input = new Scanner(System.in);
 		
@@ -33,12 +40,14 @@ public class RossRainaGE03 {
 
 	public static double getValidGrade (double MIN_GRADE, double MAX_GRADE, Scanner input) {
 		
+		// ensuring that to start the grade is not within range
 		double grade = -1;
 		
 		while (grade < 0 || grade > 105)
 		{
 			grade = input.nextDouble();
 			
+			//error message to display if outside of range
 			if (grade < 0 || grade > 105)
 			{
 				System.out.println("Please input a grade between 0 and 105");
@@ -46,6 +55,25 @@ public class RossRainaGE03 {
 		}
 		return grade;
 	
+	}
+	
+	public static void programInfo (double CP_WEIGHT, double GE_WEIGHT, double Q_WEIGHT, double PI_WEIGHT, double FE_WEIGHT) {
+		
+		System.out.println("Categories\n");
+		System.out.println("Class Paricipation " + (CP_WEIGHT*100) + "%");
+		System.out.println("Guided Exploration " + (GE_WEIGHT*100) + "%");
+		System.out.println("Quizzes " + (Q_WEIGHT*100) + "%");
+		System.out.println("Project Iterations " + (PI_WEIGHT*100) + "%");
+		System.out.println("Final Exam " + (FE_WEIGHT*100) + "%");
+		
+		System.out.println("\nGrade Ranges\n");
+		System.out.println("A: 90 to 100");
+		System.out.println("B: 80 to <90");
+		System.out.println("C: 70 to <80");
+		System.out.println("D: 60 to <70");
+		System.out.println("F: <60");
+		
+		
 	}
 	
 }
