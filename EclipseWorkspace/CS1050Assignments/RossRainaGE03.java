@@ -84,7 +84,7 @@ public class RossRainaGE03 {
 			//error message to display if outside of range
 			if (grade < MIN_GRADE || grade > MAX_GRADE)
 			{
-				System.out.println("Please input a grade between 0 and 105");
+				System.out.println("Please input a grade between " + MIN_GRADE + "and " + MAX_GRADE);
 			}
 		}
 		return grade;
