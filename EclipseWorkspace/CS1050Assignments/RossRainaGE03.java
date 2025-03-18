@@ -32,7 +32,8 @@ public class RossRainaGE03 {
 		
 		Scanner input = new Scanner(System.in);
 		
-		System.out.println("Enter Class Participation Grade: ");
+		// user prompting to input grades
+		System.out.println("\nEnter Class Participation Grade: ");
 		double classParticipation  =  getValidGrade(MIN_GRADE, MAX_GRADE, input);
 		
 		System.out.println("Enter Guided Exploration Grade: ");
@@ -47,6 +48,12 @@ public class RossRainaGE03 {
 		System.out.println("Enter Final Exam Grade: ");
 		double finalExam = getValidGrade(MIN_GRADE, MAX_GRADE, input);
 
+		// final grade calculation
+		int finalGrade = (int)((CP_WEIGHT*classParticipation)
+				+(GE_WEIGHT*guidedExploration)
+				+(Q_WEIGHT*quizzes)
+				+(PI_WEIGHT*projectIteration)
+				+(FE_WEIGHT*finalExam));
 		
 	}
 
