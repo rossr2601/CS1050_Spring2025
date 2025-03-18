@@ -77,12 +77,12 @@ public class RossRainaGE03 {
 		// ensuring that to start the grade is not within range
 		double grade = -1;
 		
-		while (grade < 0 || grade > 105)
+		while (grade < MIN_GRADE || grade > MAX_GRADE)
 		{
 			grade = input.nextDouble();
 			
 			//error message to display if outside of range
-			if (grade < 0 || grade > 105)
+			if (grade < MIN_GRADE || grade > MAX_GRADE)
 			{
 				System.out.println("Please input a grade between 0 and 105");
 			}
