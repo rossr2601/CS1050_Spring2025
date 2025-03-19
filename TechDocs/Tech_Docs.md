@@ -106,7 +106,7 @@ if else (finalGrade => 80)
     }
 ```
 
-Because the program will check each case until it finds one that is true, it won't give multiple outputs. This is called a multi-way if *further discussed in [module 2](#module-02-predefined-classes-methods-and-decision-structures)*
+Because the program will check each case until it finds one that is true, it won't give multiple outputs. This is called a [multi-way if](#multi-way-if-statments).
 
 ### Primitive Data Types ###
 
@@ -377,7 +377,7 @@ else
 }
 ```
 
-You have to be careful on where you are placing your declarations and initializations of variables. There is the practice of **least privileged** access. So if a variable is only needed in one section of the code, then it should only be within the *scope* of that section.
+You have to be careful on where you are placing your declarations and initializations of variables. There is the practice of **least privileged** access. So if a variable is only needed in one section of the code, then it should only be within the [*scope*](#scope) of that section.
 
 You can easily tell the **scope** of something by looking at where the curly brackets { } start and end. 
 
@@ -499,6 +499,10 @@ In this example `case 6` and `case 7` share the same output.
 - [Increment & Decrement](#increment-and-decrement)
 - [While Loops](#while-loops)
     - [While Loop Design](#while-loop-design)
+- [Do-While Loops](#do-while-loop)
+- [For Loops](#for-loop)
+- [Bad Loop Habits](#bad-ways-to-end-loops)
+- [Scope](#scope)
 
 ### Increment and Decrement ###
 
@@ -599,6 +603,39 @@ do
 ```
 
 For most loops a semicolon `;` is a death sentence. But for do while's you **need** the `;`.
+
+### For Loop ###
+
+This is similar to the while loop, but it is used when you know the amount of times that the loop needs to execute.
+
+```java
+for (int i = 0; i <= 2; i++) 
+{
+   System.out.println("This is iteration " + i + " of the for-loop");
+}
+```
+
+The above code is initializing the variable, setting a boolean expression, and setting an increment. This can be used for counters.
+
+### Bad Ways to end Loops ###
+
+Using `system.exit`
+- Prevents final cleanup code from running, meaning any necessary post-loop logic never executes.
+- Does not allow for proper error handling or expansion, making the code harder to maintain.
+
+Using `break`
+- Breaks loop flow early instead of using a clear loop condition.
+- Makes the logic harder to follow.
+- Only place where you use `break` is in switch statements
+
+### Scope ###
+
+This is the area of a program that a variable can be referenced.
+
+For example: Declaring the control variable `j` in the for-loop causes its scope to be only inside the loop
+
+Whilst Declaring control variable `j`  before the for loop cause its scope to be inside and outside the loop 
+
 
 ## Quick References ##
 
