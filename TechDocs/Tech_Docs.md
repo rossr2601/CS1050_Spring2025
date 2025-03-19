@@ -636,6 +636,48 @@ For example: Declaring the control variable `j` in the for-loop causes its scope
 
 Whilst Declaring control variable `j`  before the for loop cause its scope to be inside and outside the loop 
 
+### Nested While Loop ###
+
+You can put while loops in for loops or for loops in while loops. Loops can be in if/else conditions and if/else conditions can be in loops.
+
+To summarize, you can place any type of loop **inside** another loop.
+
+It's *loop-ception*
+
+```java
+int outer = 1;
+while (outer < 3) {
+System.out.println ("The outer loop iteration is = " + outer);
+			
+	 // This is the inner while loop
+	 // It will do all iterations before outer loop does another iteration
+	   
+	 int inner = 1;			
+	 while (inner <= 5) {
+	      System.out.println ("   The inner loop iteration is = " + inner);
+		inner++;
+	  }
+			
+	 outer++;
+}
+```
+
+This is interesting because the inner loop will **completely** iterate through *before* kicking back into the outer loop. So the console output looks like below...
+
+```java
+The outer loop iteration is = 1
+    The inner loop iteration is = 1
+    The inner loop iteration is = 2
+    The inner loop iteration is = 3
+    The inner loop iteration is = 4
+    The inner loop iteration is = 5
+The outer loop iteration is = 2
+    The inner loop iteration is = 1
+    The inner loop iteration is = 2
+    The inner loop iteration is = 3
+    The inner loop iteration is = 4
+    The inner loop iteration is = 5
+```
 
 ## Quick References ##
 
