@@ -504,6 +504,7 @@ In this example `case 6` and `case 7` share the same output.
 - [Bad Loop Habits](#bad-ways-to-end-loops)
 - [Scope](#scope)
 - [Nested Loops](#nested-loops)
+- [Creating Methods](#methods-2-electric-boogaloo)
 
 ### Increment and Decrement ###
 
@@ -678,6 +679,112 @@ The outer loop iteration is = 2
     The inner loop iteration is = 3
     The inner loop iteration is = 4
     The inner loop iteration is = 5
+```
+
+### Methods 2: Electric Boogaloo ###
+
+What is the purpose of creating our own methods?
+
+- Provides a way to organize and simplify code
+- Once code is in a method it can be called many times so do not repeat code
+- Improves code quality and readability
+- Breaking code into units makes it easier to plan, code, test and modify
+
+General Form/Function
+
+- public - visible to all classes
+- static - static methods belong to a class
+- returnType - data type for value that is returned (int, double, boolean, etc.) or void (nothing to return)
+- methodName - a user defined name
+- formal parameter list - information that is coming into the method
+
+![Method Form](TechDoc_Images/MethodForm.png)
+
+When you are calling a method into main, you **must** put parenthesis `()` where you put the values to pass into the method. In this case, the values of `i` and `j` are being *passed by value* into the variables `num1` and `num2` inside of the `max` method.
+
+```java
+public static void main(String[] args) {
+    int i = 5;
+    int j = 2;
+    int k = max(i, j); // Invoke max method
+    System.out.println("The maximum between " + i +
+      " and " + j + " is " + k);
+  }
+
+  /** Return the max between two numbers */
+  public static int max(int num1, int num2) {
+    int result;
+
+    if (num1 > num2)
+      result = num1;
+    else
+      result = num2;
+
+    return result; // Return result
+  }
+```
+
+You could also tehcnically **hard code** into the arguements when you invoke the method. In this case, you could have done `int k = max(5,2);`.
+
+This is functionally the same thing. But, as discussed earlier we do want to avoid hardcoding when possible. This is why we have variables to hold the values so that it can stay consistent across the code.
+
+<ins>**An important thing to note!**</ins>
+
+When you are defining the *formal parameter* list, you are essentially creating variables that live **only** inside the method that you are creating. If you want a variable to be accessible across all methods, then you must declare/initialize it within `main`.
+
+```java
+public static double getValidGrade (double MIN_GRADE, double MAX_GRADE, Scanner input) {
+		
+		// ensuring that to start the grade is not within range
+		double grade = -1;
+		
+		while (grade < MIN_GRADE || grade > MAX_GRADE)
+		{
+			grade = input.nextDouble();
+			
+			//error message to display if outside of range
+			if (grade < MIN_GRADE || grade > MAX_GRADE)
+			{
+				System.out.println("Please input a grade between " + MIN_GRADE + "and " + MAX_GRADE);
+			}
+		}
+		return grade;
+	}
+```
+
+In the above case, we defined a `double` as what the **return** will be. If you create a method that has a return to main, at the end of the method you must **explicitly** state what you are returning to main. If you do not, you will get the below error code.
+
+![Return Value Error](TechDoc_Images/ReturnValue_Method.png)
+
+As standard practice, you only want to return `one` value back to main. Notice in the code below even though there are multiple *possible* outcomes, we are **only** returning `one` back to main.
+
+```java
+public static char determineLetterGrade(double finalGrade)
+	{
+		char letterGrade = ' ';
+			
+		if (finalGrade >= 90)
+		{
+			letterGrade =  'A';
+		}
+		else if (finalGrade >= 80)
+		{
+			letterGrade = 'B';
+		} 
+		else if (finalGrade >= 70)
+		{
+			letterGrade = 'C';
+		} 
+		else if (finalGrade >= 60)
+		{
+			letterGrade = 'D';
+		} 
+		else
+		{
+			letterGrade = 'F';
+		}
+		return letterGrade;
+	}
 ```
 
 ## Quick References ##
