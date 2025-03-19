@@ -503,6 +503,7 @@ In this example `case 6` and `case 7` share the same output.
 - [For Loops](#for-loop)
 - [Bad Loop Habits](#bad-ways-to-end-loops)
 - [Scope](#scope)
+- [Nested Loops](#nested-loops)
 
 ### Increment and Decrement ###
 
@@ -636,7 +637,7 @@ For example: Declaring the control variable `j` in the for-loop causes its scope
 
 Whilst Declaring control variable `j`  before the for loop cause its scope to be inside and outside the loop 
 
-### Nested While Loop ###
+### Nested Loops ###
 
 You can put while loops in for loops or for loops in while loops. Loops can be in if/else conditions and if/else conditions can be in loops.
 
