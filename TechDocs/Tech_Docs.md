@@ -727,7 +727,7 @@ public static void main(String[] args) {
 
 You could also tehcnically **hard code** into the arguements when you invoke the method. In this case, you could have done `int k = max(5,2);`.
 
-This is functionally the same thing. But, as discussed earlier we do want to avoid hardcoding when possible. This is why we have variables to hold the values so that it can stay consistent across the code.
+This is functionally the same thing. But, as discussed [earlier](#what-is-hard-coding-and-why-is-it-bad) we do want to avoid hardcoding when possible. This is why we have variables that hold the values so that it can stay consistent across the code.
 
 <ins>**An important thing to note!**</ins>
 
