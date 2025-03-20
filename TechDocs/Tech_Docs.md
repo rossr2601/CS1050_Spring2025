@@ -505,6 +505,7 @@ In this example `case 6` and `case 7` share the same output.
 - [Scope](#scope)
 - [Nested Loops](#nested-loops)
 - [Creating Methods](#methods-2-electric-boogaloo)
+- [Call and Stack Frames](#call-and-stack-frames)
 
 ### Increment and Decrement ###
 
@@ -786,6 +787,32 @@ public static char determineLetterGrade(double finalGrade)
 		return letterGrade;
 	}
 ```
+
+### Call and Stack Frames ###
+ 
+AKA the "push and pop"
+
+Stacks are last in, first out (LIFO) last item pushed onto stack is 1st item popped off.
+
+The **call stack** is used to keep track of active methods. When method is called, information for that method (called a stack frame) is *pushed* onto the stack.
+
+Information that is pushed
+- Values of parameters and local variables
+- Current line of code executing
+- Return address to return to calling function
+
+Method on the top of stack is the current executing method.
+Method stays on top until the ending curly brace is reached
+
+When the Method returns (completes)
+- Information for that method is popped off the stack
+- Memory local to that stack is deallocated
+
+Main is always going to be at the base of your stack. As main invokes methods, they are temporarily added onto the call stack until it is done executing and then the **pop** off.
+
+![Call and Stack Reference](TechDoc_Images/Call%20and%20Stack%20Frame.png)
+
+Methods other than main can also invoke methods themselves. That's why the stack doesn't only consist of two stacks at any one time, it can have methods within methods with methods.
 
 ## Quick References ##
 
