@@ -701,7 +701,7 @@ General Form/Function
 
 ![Method Form](TechDoc_Images/MethodForm.png)
 
-When you are calling a method into main, you **must** put parenthesis `()` where you put the values to pass into the method. In this case, the values of `i` and `j` are being *passed by value* into the variables `num1` and `num2` inside of the `max` method.
+When you are calling a method into main, you **must** put parenthesis `()` where you put the values to pass into the method. In this case, the values of `i` and `j` are being [*passed by value*](#pass-by-value) into the variables `num1` and `num2` inside of the `max` method.
 
 ```java
 public static void main(String[] args) {
@@ -813,6 +813,14 @@ Main is always going to be at the base of your stack. As main invokes methods, t
 ![Call and Stack Reference](TechDoc_Images/Call%20and%20Stack%20Frame.png)
 
 Methods other than main can also invoke methods themselves. That's why the stack doesn't only consist of two stacks at any one time, it can have methods within methods with methods.
+
+### Pass by Value ###
+
+Pass by value means putting a copy of the value from one memory location and puting it in another memory location. Even if you would make the formal parameter names the same they are still located in two different memory locations. 
+
+A note on that: It creates more readable code if you name your variables **different** things, even if they are representing the same thing.
+
+So when the method stack is building, for **primitive data types only** you are creating copies that only exist within each individual method's stack.
 
 ## Quick References ##
 
