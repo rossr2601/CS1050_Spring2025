@@ -17,8 +17,6 @@ public class CategoryGrade {
 		// TODO Auto-generated method stub
 		
 		Scanner input = new Scanner(System.in);
-		double MIN_GRADE = 0;
-		double MAX_GRADE = 105;
 	}
 	
 	public static double getValidGrade (double MIN_GRADE, double MAX_GRADE, Scanner input) {
@@ -33,10 +31,37 @@ public class CategoryGrade {
 			//error message to display if outside of range
 			if (grade < MIN_GRADE || grade > MAX_GRADE)
 			{
-				System.out.println("Please input a grade between " + MIN_GRADE + "and " + MAX_GRADE);
+				System.out.println("Please input a grade between " + MIN_GRADE + " and " + MAX_GRADE);
 			}
 		}
 		return grade;
+	}
+	
+	public static char determineLetterGrade(double finalGrade)
+	{
+		char letterGrade = ' ';
+			
+		if (finalGrade >= 90)
+		{
+			letterGrade =  'A';
+		}
+		else if (finalGrade >= 80)
+		{
+			letterGrade = 'B';
+		} 
+		else if (finalGrade >= 70)
+		{
+			letterGrade = 'C';
+		} 
+		else if (finalGrade >= 60)
+		{
+			letterGrade = 'D';
+		} 
+		else
+		{
+			letterGrade = 'F';
+		}
+		return letterGrade;
 	}
 
 }
