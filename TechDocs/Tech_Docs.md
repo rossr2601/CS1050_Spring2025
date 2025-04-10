@@ -825,6 +825,11 @@ So when the method stack is building, for **primitive data types only** you are 
 ## Module 04: Arrays and Files ##
 
 - [What is an Array?](#what-is-an-array)
+    - [How is Data Accessed?](#how-is-data-in-arrays-accessed)
+    - [What is an Array Index?](#what-is-an-array-index)
+- [Declaring & Initializing Arrays](#declaring-and-initializing-arrays)
+- [Putting Values into Arrays](#putting-values-into-arrays)
+
 
 ### What is an Array? ###
 
@@ -834,6 +839,8 @@ What is the heap? It's a place where data is stored *outside* of the stack frame
 
 Items that are stored on the heap have an **address** within the program itself. So we are not storing the actual data on the stack, just an address that points to the stack.
 
+#### How is Data in Arrays Accessed? ###
+
 It's actually pretty interesting how arrays work. So say we have `id=52`. The program goes to address `52` on the heap, then multiplies the amount of space allocation for a particular data type in order to go to the desired destination. So if I want to go to **index** 3, the computer goes to `52` and multiplies the data type memory by 3, and then can go to index 3. 
 
 #### What is an Array Index? ####
@@ -841,6 +848,56 @@ It's actually pretty interesting how arrays work. So say we have `id=52`. The pr
 It is the position slot in the array. And interesting thing to note is that arrays start at `index 0` becuase of how it retrieves data as discussed earlier.
 
 ![Arrays Example](TechDoc_Images/ArraysExample.png)
+
+### Declaring and Initializing Arrays ###
+
+You must declare the data type and the *size* of the array before you can actually put data into it. When you are declaring the size you are putting the **total** number of spaces. But remember, all arrays start at index 0.
+
+```java
+int[] numbers = new int[5];
+```
+
+Instead of hardcoding like in the example above, it is standard practice to use variables for your array sizes.
+
+```java
+final int TOTAL_NUMBERS = 5
+
+int[] numbers = new int[TOTAL_NUMBERS];
+```
+
+Once you declare the length of an array you **cannot** change it later in the program. You can type `array.length` to get the length of the array. Pretty self explanatory but really powerful when iterating through an array.
+
+### Putting values into Arrays ###
+
+There is several ways that you can put values into your array. Some of them are better than others, and some are only applicable in certain circumstances.
+
+**<ins>You can initialize by hardcoding</ins>**
+
+```java
+/// Manually initialize array
+int[] numberList = new int[5];
+numberList[0] = 1;
+numberList[1] = 2;
+numberList[2] = 3;
+numberList[3] = 4;
+numberList[4] = 5;
+```
+
+**<ins>You can hardcode your values in a list </ins>**
+
+```java
+/// Initialize with a list
+int[] numberList = {1, 2, 3, 4, 5};
+```
+
+**<ins>You can use a *for* loop to iterate through</ins>**
+
+```java
+int[] newArray = new int[arraySize];
+	for (int i = 0; i < newArray.length; i++) {	
+		newArray[i] = (int)(Math.random() * 10 + 1); 
+		}
+```
 
 ## Quick References ##
 
