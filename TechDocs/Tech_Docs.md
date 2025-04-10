@@ -822,6 +822,26 @@ A note on that: It creates more readable code if you name your variables **diffe
 
 So when the method stack is building, for **primitive data types only** you are creating copies that only exist within each individual method's stack.
 
+## Module 04: Arrays and Files ##
+
+- [What is an Array?](#what-is-an-array)
+
+### What is an Array? ###
+
+An array is a type of data structure that hold values of the **same** data type in a sequential order on the **heap**
+
+What is the heap? It's a place where data is stored *outside* of the stack frame that methods are placed housed in. So we put data on the heap that we want to persist past the life of a method.
+
+Items that are stored on the heap have an **address** within the program itself. So we are not storing the actual data on the stack, just an address that points to the stack.
+
+It's actually pretty interesting how arrays work. So say we have `id=52`. The program goes to address `52` on the heap, then multiplies the amount of space allocation for a particular data type in order to go to the desired destination. So if I want to go to **index** 3, the computer goes to `52` and multiplies the data type memory by 3, and then can go to index 3. 
+
+#### What is an Array Index? ####
+
+It is the position slot in the array. And interesting thing to note is that arrays start at `index 0` becuase of how it retrieves data as discussed earlier.
+
+![Arrays Example](/TechDoc_Images/ArraysExample.png)
+
 ## Quick References ##
 
 ### Reading from the users keyboard ###
