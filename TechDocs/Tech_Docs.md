@@ -840,7 +840,7 @@ It's actually pretty interesting how arrays work. So say we have `id=52`. The pr
 
 It is the position slot in the array. And interesting thing to note is that arrays start at `index 0` becuase of how it retrieves data as discussed earlier.
 
-![Arrays Example](/TechDoc_Images/ArraysExample.png)
+![Arrays Example](TechDoc_Images/ArraysExample.png)
 
 ## Quick References ##
 
