@@ -830,6 +830,25 @@ So when the method stack is building, for **primitive data types only** you are 
 - [Declaring & Initializing Arrays](#declaring-and-initializing-arrays)
 - [Putting Values into Arrays](#putting-values-into-arrays)
 
+### The Heap vs Stack ###
+
+So we've previously discussed the [memory stack](#call-and-stack-frames), but now we are going to talk about a different kind of memory storage called the **heap**. 
+
+The heap is often visualized as a pile of shit that you can both add to and take away from. The data that is stored on the heap is accessed by *reference variables*. In our actual code, we may have a `String` for example. But under the hood we actual have an address that this variable name is pointing to on the heap.
+
+![String Reference](TechDoc_Images/StringReference.png)
+
+![Heap Data](TechDoc_Images/HeapData.png)
+
+Since a `String` is actually just an array of `chars`, userContinue is actually just holding the address that points to that array on the heap.
+
+The benefit of utilizing heap memory is that it persists past the method stack frame. Meaning, if a method initilizes an array, when that method pops the array data is still stored on the heap itself. As long as we return the reference variable which holds the address back to main we can still access this data.
+
+Primitive data types is what is stored within the stack frame. You can distinguish between what is stored on the stack vs the heap by looking at the debugger. In the above example, you can see a drop down arrow and instead of a value it has `(id-27)`.
+
+![Primitive Data Type Variable](TechDoc_Images/PrimitiveDataTypeVariable.png)
+
+Now in this example you can see the actual values being stored and there is no option for a drop down. This is being stored within the stack and **not** on the heap.
 
 ### What is an Array? ###
 
@@ -898,6 +917,10 @@ int[] newArray = new int[arraySize];
 		newArray[i] = (int)(Math.random() * 10 + 1); 
 		}
 ```
+
+Whenever you put data into the array it will appear in memory on the heap.
+
+![Array Data](TechDoc_Images/ArrayData.png)
 
 ## Quick References ##
 
