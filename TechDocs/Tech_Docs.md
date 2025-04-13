@@ -844,11 +844,15 @@ Since a `String` is actually just an array of `chars`, userContinue is actually 
 
 The benefit of utilizing heap memory is that it persists past the method stack frame. Meaning, if a method initilizes an array, when that method pops the array data is still stored on the heap itself. As long as we return the reference variable which holds the address back to main we can still access this data.
 
-Primitive data types is what is stored within the stack frame. You can distinguish between what is stored on the stack vs the heap by looking at the debugger. In the above example, you can see a drop down arrow and instead of a value it has `(id-27)`.
+Primitive data types is what is stored within the stack frame. You can distinguish between what is stored on the stack vs the heap by looking at the debugger. In the above example, you can see a drop down arrow and instead of a value it has `(id=27)`.
 
 ![Primitive Data Type Variable](TechDoc_Images/PrimitiveDataTypeVariable.png)
 
 Now in this example you can see the actual values being stored and there is no option for a drop down. This is being stored within the stack and **not** on the heap.
+
+### Pass by Reference ###
+
+When we are passing arrays down to other methods we are passing by reference. Because arrays are stored off the stack and on the heap, we simply are giving the method the **address** for the array we want it to have access to. This is more efficient for passing arrays because there is no need to create an entirely new memory section for this particular method when it still accessible on the heap.
 
 ### What is an Array? ###
 
@@ -921,6 +925,16 @@ int[] newArray = new int[arraySize];
 Whenever you put data into the array it will appear in memory on the heap.
 
 ![Array Data](TechDoc_Images/ArrayData.png)
+
+### Array-Ception??? ###
+
+What if we want an array of `Strings`? Those aren't a primitive data type, as we discussed earlier they are an array themselves.
+
+Well, good news! You can store an array **of** arrays!
+
+![String Array](TechDoc_Images/StringArray.png)
+
+### Array-Ception Continued: 2-D Arrays ###
 
 ## Quick References ##
 
