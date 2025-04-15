@@ -4,6 +4,7 @@
 - [Module 01](#module-01-programming-fundamentals-and-java)
 - [Module 02](#module-02-predefined-classes-methods-and-decision-structures)
 - [Module 03](#module-03-loops-and-software-development)
+- [Module 04](#module-04-arrays-and-files)
 - [Quick References](#quick-references)
 
 ## Module 01: Programming Fundamentals and Java ##
@@ -935,6 +936,14 @@ Well, good news! You can store an array **of** arrays!
 ![String Array](TechDoc_Images/StringArray.png)
 
 ### Array-Ception Continued: 2-D Arrays ###
+
+2-D arrays are essentially like a table that you may find in excel or any part of your day to day life.
+
+You initialize them very similarly, but you put a second set of brackets to indicate the two dimensional nature of this array.
+
+```java
+int[][] newArray = new int[5][5];
+```
 
 ## Quick References ##
 
