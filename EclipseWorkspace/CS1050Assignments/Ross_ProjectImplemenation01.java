@@ -90,7 +90,7 @@ public class Ross_ProjectImplemenation01 {
 		
 		for (int count = 0; count < 7; count++)
 		{
-			System.out.print("\nEnter calories burned on day " + (count+1) + ":");
+			System.out.print("\nEnter calories burned on day " + (count+1) + ": ");
 			dailyCal[count] = getValidDouble(userInput);
 		}
 		return dailyCal;
