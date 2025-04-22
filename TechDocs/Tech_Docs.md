@@ -947,10 +947,6 @@ int[][] newArray = new int[5][5];
 
 ## Quick References ##
 
-### Eclipse Environment Set Up ###
-
-[Click here](Environment%20Setup%20Eclipse,%20Git%20and%20Github.docx.pdf)
-
 ### Reading from the users keyboard ###
 
 ```java
