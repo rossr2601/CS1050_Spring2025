@@ -296,9 +296,7 @@ Important thing to note: When storing chars you have to use single quotes **(``)
 
 ### Strings ###
 
-Strings are essentially arrays that hold multiple char values. This is a non-primitive data type because it holds **multiple values**. 
-
-[comment]: # (Connect array to module 4 when you get to it)
+Strings are essentially [arrays](#what-is-an-array) that hold multiple char values. This is a non-primitive data type because it holds **multiple values**. 
 
 This is the way that we declare Strings in this course.
 
@@ -830,6 +828,8 @@ So when the method stack is building, for **primitive data types only** you are 
     - [What is an Array Index?](#what-is-an-array-index)
 - [Declaring & Initializing Arrays](#declaring-and-initializing-arrays)
 - [Putting Values into Arrays](#putting-values-into-arrays)
+- [Array-Ception (Strings)](#array-ception)
+- [Array-Ception (2D Arrays)](#array-ception-continued-2-d-arrays)
 
 ### The Heap vs Stack ###
 
