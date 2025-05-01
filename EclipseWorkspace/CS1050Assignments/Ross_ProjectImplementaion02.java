@@ -20,6 +20,39 @@ public class Ross_ProjectImplementaion02 {
 
 }
 
+class Gym {
+	private String name;
+	private int athleteMax;
+	private int currentNumAthletes;
+	private Athlete[] athleteList = new Athlete[athleteMax];
+	
+	// Constructor
+	public Gym(String name, int athleteMax)
+	{
+		this.name = name;
+		this.athleteMax = athleteMax;
+	}
+	
+	public void topAthlete(double[] avgCal)
+	{
+		double currentMax = avgCal[0];
+		for (int count = 0; count < avgCal.length; count++)
+		{
+			if(avgCal[count] > currentMax)
+			{
+				currentMax = avgCal[count];
+			}
+		}
+		
+		System.out.println("Top Athlete by average daily calories burned is: Athlete " + (currentMax+1));
+	}
+	
+	public void athleteSummary()
+	{
+		for ()
+	}
+}
+
 class Athlete {
 	private String firstName;
 	private String lastName;
