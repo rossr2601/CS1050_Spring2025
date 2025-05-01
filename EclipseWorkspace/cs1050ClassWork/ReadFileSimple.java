@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class ReadFileSimple {
     public static void main(String[] args) {
-        final String FILENAME = "test.txt"; 
+        final String FILENAME = "gym1.txt"; 
 
         try {
             // Create a Scanner to read from the file
@@ -13,13 +13,26 @@ public class ReadFileSimple {
 
             System.out.println("Reading file contents:");
 
-            // Read and print each line in the file
-            //iterate while the file has a next line
-            while (fileScanner.hasNextLine()) {
-                String line = fileScanner.nextLine(); // Read the full line
-                System.out.println(line);             // Display it to the console
+            while (fileScanner.hasNextLine())
+            {
+            	
+            	String firstName = fileScanner.next();
+            	System.out.println(firstName);
+            	
+            	String lastName = fileScanner.next();
+            	System.out.println(lastName);
+            
+            	double weight = fileScanner.nextDouble();
+            	double height = fileScanner.nextDouble();
+            	int age = fileScanner.nextInt();
+            	
+            	double[] dailyCal = new double[7];
+        		
+        		for (int count = 0; count < 7; count++)
+        		{
+        			dailyCal[count] = fileScanner.nextDouble();
+        		}
             }
-
             // Always close the file when done
             fileScanner.close();
 
