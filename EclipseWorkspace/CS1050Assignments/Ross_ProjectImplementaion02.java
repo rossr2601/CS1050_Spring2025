@@ -36,18 +36,18 @@ class Gym {
 	
 	public void topAthlete()
 	{
-		Athlete tempAth;
-		double avgCal = tempAth.avgCalBurned();
-		double currentMax = avgCal[0];
-		for (int count = 0; count < avgCal.length; count++)
+		double avgCal = athleteList[0].avgCalBurned();
+		int currentTop = 0;
+		for (int count = 1; count < athleteList.length; count++)
 		{
-			if(avgCal[count] > currentMax)
+			if (athleteList[count].avgCalBurned() > currentTop)
 			{
-				currentMax = avgCal[count];
+				avgCal = athleteList[count].avgCalBurned();
+				currentTop = count;
 			}
 		}
 		
-		System.out.println("Top Athlete by average daily calories burned is: Athlete " + (currentMax+1));
+		System.out.println("Top Athlete by average daily calories burned is: " + (athleteList[currentTop].getFirstName()));
 	}
 	
 }
