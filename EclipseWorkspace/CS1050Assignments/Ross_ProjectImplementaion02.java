@@ -36,18 +36,18 @@ class Gym {
 	
 	public void topAthlete()
 	{
-		double avgCal = athleteList[0].avgCalBurned();
-		int currentTop = 0;
+		double currentTop = athleteList[0].avgCalBurned();
+		int currentTopIndex = 0;
 		for (int count = 1; count < athleteList.length; count++)
 		{
 			if (athleteList[count].avgCalBurned() > currentTop)
 			{
-				avgCal = athleteList[count].avgCalBurned();
-				currentTop = count;
+				currentTop = athleteList[count].avgCalBurned();
+				currentTopIndex = count;
 			}
 		}
 		
-		System.out.println("Top Athlete by average daily calories burned is: " + (athleteList[currentTop].getFirstName()));
+		System.out.println("Top Athlete by average daily calories burned is: " + (athleteList[currentTopIndex].getFirstName()));
 	}
 	
 }
@@ -102,8 +102,7 @@ class Athlete {
 	public double calcBMI()
 	{
 		double BMI = (703*weight)/(height*height);
-		double roundedBMI = Math.round(BMI * 100.0)/ 100.0;
-		return roundedBMI;
+		return BMI;
 	}
 	
 	public int maxHeartRate()
@@ -148,17 +147,16 @@ class Athlete {
 		
 		double avg = sum / dailyCal.length;
 		
-		double roundedAvg = Math.round(avg * 100.0) / 100.0;
 		
-		return roundedAvg;
+		return avg;
 	}
 	
 	public void displayInfo()
 	{
 		System.out.println("Athlete: " + firstName + " " + lastName);
 		System.out.println("\tMax Heart Rate: " + maxHeartRate());
-		System.out.println("\tAverage Daily Calories Burned: " + avgCalBurned());
-		System.out.print("\tBMI: " + calcBMI());
+		System.out.printf("%s%.2f", "\tAverage Daily Calories Burned: ", avgCalBurned());
+		System.out.printf("%s%.2f","\n\tBMI: " , calcBMI());
 		System.out.print("\tCategory: " + categoryBMI());
 	}
 }
