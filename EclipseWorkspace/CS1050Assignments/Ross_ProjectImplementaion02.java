@@ -31,10 +31,13 @@ class Gym {
 	{
 		this.name = name;
 		this.athleteMax = athleteMax;
+		currentNumAthletes = 0;
 	}
 	
-	public void topAthlete(double[] avgCal)
+	public void topAthlete()
 	{
+		Athlete tempAth;
+		double avgCal = tempAth.avgCalBurned();
 		double currentMax = avgCal[0];
 		for (int count = 0; count < avgCal.length; count++)
 		{
@@ -47,10 +50,6 @@ class Gym {
 		System.out.println("Top Athlete by average daily calories burned is: Athlete " + (currentMax+1));
 	}
 	
-	public void athleteSummary()
-	{
-		for ()
-	}
 }
 
 class Athlete {
@@ -73,22 +72,51 @@ class Athlete {
 		this.dailyCal = dailyCal;
 	}
 	
-	public double calcBMI(double height, double weight)
+	// getters for instance variables
+	public String getFirstName()
+	{
+		return firstName;
+	}
+	
+	public String getLastName()
+	{
+		return lastName;
+	}
+	
+	public int getAge()
+	{
+		return age;
+	}
+	
+	public double getHeight()
+	{
+		return height;
+	}
+	
+	public double getWeight()
+	{
+		return weight;
+	}
+	
+	// calculate athlete BMI
+	public double calcBMI()
 	{
 		double BMI = (703*weight)/(height*height);
 		double roundedBMI = Math.round(BMI * 100.0)/ 100.0;
 		return roundedBMI;
 	}
 	
-	public int maxHeartRate(int athAge)
+	public int maxHeartRate()
 	{
-		int maxHR = 220 - athAge;
+		int maxHR = 220 - age;
 		return maxHR;
 	}
 	
-	public String categoryBMI(double BMI)
+	// assign category based on BMI
+	public String categoryBMI()
 	{
 		String category;
+		double BMI = calcBMI();
 		
 		if (BMI < 18.5)
 		{
@@ -109,7 +137,8 @@ class Athlete {
 		return category;
 	}
 	
-	public double avgCalBurned(double[] dailyCal)
+	// calculate average calorie burned
+	public double avgCalBurned()
 	{
 		double sum = 0;
 		for (int count = 0; count < dailyCal.length; count++)
@@ -127,9 +156,9 @@ class Athlete {
 	public void displayInfo()
 	{
 		System.out.println("Athlete: " + firstName + " " + lastName);
-		System.out.println("\tMax Heart Rate: " + maxHeartRate(age));
-		System.out.println("\tAverage Daily Calories Burned: " + avgCalBurned(dailyCal));
-		System.out.print("\tBMI: " + calcBMI(height, weight));
-		System.out.print("\tCategory: " + categoryBMI(calcBMI(height, weight)));
+		System.out.println("\tMax Heart Rate: " + maxHeartRate());
+		System.out.println("\tAverage Daily Calories Burned: " + avgCalBurned());
+		System.out.print("\tBMI: " + calcBMI());
+		System.out.print("\tCategory: " + categoryBMI());
 	}
 }
