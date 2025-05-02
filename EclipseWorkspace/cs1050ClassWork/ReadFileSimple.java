@@ -16,10 +16,9 @@ public class ReadFileSimple {
             while (fileScanner.hasNextLine())
             {
             	
-            	String firstName = fileScanner.next();
-            	System.out.println(firstName);
+            	String firstName = fileScanner.next().trim();
             	
-            	String lastName = fileScanner.next();
+            	String lastName = fileScanner.next().trim();
             	System.out.println(lastName);
             
             	double weight = fileScanner.nextDouble();
