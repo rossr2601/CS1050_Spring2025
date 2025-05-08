@@ -50,7 +50,7 @@ There are several types of errors that you may come across as you code. They can
 
 This type of error occurs when you **violate** the syntax of the code. Kind of self explanatory right? This can happen whenever you don't put on a semicolon `;` at the end of a line of code.
 
-[comment]: # (Insert picture of syntax error due to ;)
+![SyntaxError](TechDoc_Images/SyntaxError.png)
 
 This will be detected by the compiler, so your code won't actually run.
 
@@ -59,8 +59,6 @@ This will be detected by the compiler, so your code won't actually run.
 These error types aren't caught by the initial compiling, and instead happens whenever the code is actually running.
 
 An ***error*** message will display in the console as a result.
-
-[comment]: # (Insert picture of error message in console)
 
 This is caused by something being off *within* your code that the computer can't understand. For example, dividing something by a `0`. This is not technically possible, and the computer will go wtf and throw it back at you.
 
@@ -944,6 +942,62 @@ You initialize them very similarly, but you put a second set of brackets to indi
 ```java
 int[][] newArray = new int[5][5];
 ```
+
+## Module 05: Objects and Classes ##
+
+### What is Object-Oriented Programming? ###
+
+Object oriented programming is an incredible powerful set of languages that allow for easier readability within your code and can allow you to build complex systems with tons of different moving parts.
+
+We've used objects that are baked into the Java language already throughout this semester. Remember how when we make a [Scanner input](#reading-from-the-users-keyboard)? We are creating a new **instance** of the Scanner class. This is also why we have to use the keyword `new` when constructing it.
+
+### Object State and Behavior ###
+
+An object has two important pieces: state and behavior.
+
+#### State (Instance Variables) ####
+
+- The data fields (properties/attributes) that define an object
+- Things an object **knows**!
+- A "dog" object may have properties such as breed, size, age, color, etc.
+
+#### Behavior (Instance Methods) ####
+
+- The behaviors (methods) that operate on the object
+- Things an object **does**! 
+- A "dog" object may have behaviors such as eat, sleep, sit, run etc.
+
+### How Classes and Objects Interact ###
+
+So an object is an *instance* of a class. Meaning, that we may have a "dog" class, but then we have an object that is named Clifford the Big Red Dog. 
+
+A class gives a **baseline** in which all objects created using it share similar attributes. It's often referred to as a blueprint.
+
+Each dog can have individual characteristics, but they all have a breed, color, age, etc.
+
+```java
+Dog Clifford = new Dog(Vizlas, Red, 11);
+Dog Spot = new Dog(Dalmation, White, 2);
+```
+
+![Class vs Object](TechDoc_Images/ClassVSObjectDiagram.png)
+
+#### <ins>Vocabulary</ins> ####
+
+| Word | Meaning |
+| -----| --------|
+| Class | Used to construct an object |
+| Object | Represents an entity |
+| Instance | An object of a particular class |
+| Instantiation | Creating a new object |
+| Constructor | A special method used to "construct" the object |
+| Dot Operator | Operator used to access the data fields and methods of an object `System.in`|
+
+### Constructor ###
+
+A constructor has **exactly** the same name as the class. There is no return type, and you can have multiple different constructors that take in different information. Also known as [**method overloading**](#method-overloading).
+
+![Constructor Example](TechDoc_Images/ConstructorExample.png)
 
 ## Quick References ##
 
