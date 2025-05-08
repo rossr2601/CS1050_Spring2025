@@ -1,10 +1,19 @@
-/**
- * 
- */
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.PrintWriter;
+import java.io.IOException;
 
 /**
  * 
  */
+
+
+
+/**
+ * 
+ */
+
 public class Ross_ProjectImplementaion02 {
 
 	/**
@@ -13,27 +22,80 @@ public class Ross_ProjectImplementaion02 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		Athlete ath1 = new Athlete("Raina", "Ross", 64.4, 160.0, 20, new double[] {100, 200, 150, 300, 50, 164, 20});
+		final String GYM01_FILE = "gym1.txt";
+		
+		Gym gym01 = new Gym("Epic-ness", 4);
 	
-		ath1.displayInfo();
+		try
+		{
+			gymSetUp(gym01, GYM01_FILE);
+			gym01.displayAllAthletes();
+			
+			gym01.topAthlete();
+		} catch (FileNotFoundException e)
+		{
+			System.out.println("Error: Can't upload athlete information\n" + e.getMessage());
+		}
+		
 	}
 
+	public static void gymSetUp(Gym gym, String filename) throws FileNotFoundException
+	{
+		Scanner fileScanner = null;
+		try 
+		{
+			fileScanner = new Scanner(new File(filename));
+			// add athletes from a file to gym
+			while (fileScanner.hasNextLine())
+	         {
+	         	String firstName = fileScanner.next().trim();
+	         	String lastName = fileScanner.next().trim();         
+	         	double weight = fileScanner.nextDouble();
+	         	double height = fileScanner.nextDouble();
+	         	int age = fileScanner.nextInt();
+	         	double[] dailyCal = new double[7];
+	     		for (int count = 0; count < 7; count++)
+	     		{
+	     			dailyCal[count] = fileScanner.nextDouble();
+	     		}
+	     		Athlete tempAthlete = new Athlete(firstName, lastName, weight, height, age, dailyCal);
+	     		gym.addAthlete(tempAthlete);
+	         }
+		} finally
+			 {
+				 if (fileScanner != null)
+				 {
+					 fileScanner.close();
+				 }
+			 }
+		}
 }
 
 class Gym {
 	private String name;
-	private int athleteMax;
 	private int currentNumAthletes;
-	private Athlete[] athleteList = new Athlete[athleteMax];
+	private Athlete[] athleteList;
 	
 	// Constructor
 	public Gym(String name, int athleteMax)
 	{
+		athleteList = new Athlete[athleteMax];
 		this.name = name;
-		this.athleteMax = athleteMax;
 		currentNumAthletes = 0;
 	}
 	
+	// getters for instance variables
+	public String getName()
+	{
+		return name;
+	}
+	
+	public int getNumAthlete()
+	{
+		return currentNumAthletes;
+	}
+	
+	// searches through array to compare the avg cal burned
 	public void topAthlete()
 	{
 		double currentTop = athleteList[0].avgCalBurned();
@@ -47,7 +109,66 @@ class Gym {
 			}
 		}
 		
-		System.out.println("Top Athlete by average daily calories burned is: " + (athleteList[currentTopIndex].getFirstName()));
+		System.out.println("\nTop Athlete by average daily calories burned is: " 
+		+ (athleteList[currentTopIndex].getFirstName()) + " " + (athleteList[currentTopIndex].getLastName()));
+	}
+	
+	public void getUnderweightAthlete()
+	{
+		System.out.println("Underweight Athletes: ");
+		// boolean flag for alternative outcome
+		boolean noUnderweight = true;
+		
+		// Check if each athlete is underweight, if yes list them
+		for (int count = 0; count < athleteList.length; count++)
+		{
+			if(athleteList[count].categoryBMI() == "Underweight")
+			{
+				System.out.println((athleteList[count].getFirstName()) + " " + (athleteList[count].getLastName()));
+				noUnderweight = false;
+			}
+		}
+		// Alternative outcome
+		if(noUnderweight = true)
+		{
+			System.out.println("No Underweight Athletes");
+		}
+	}
+	
+	// adds new athlete to gym or returns error that gym is full
+	public void addAthlete(Athlete newAthlete)
+	{
+		if (currentNumAthletes < athleteList.length)
+		{
+			athleteList[currentNumAthletes] = newAthlete;
+			currentNumAthletes++;
+		}
+		else
+		{
+			System.out.println("Gym is full.");
+		}
+	}
+	
+	public void displayAllAthletes()
+	{
+		System.out.println("\n***** " + name + " Weekly Fitness Summary *****");
+		
+		for (int i = 0; i < currentNumAthletes; i++)
+		{
+			athleteList[i].displayInfo();
+			System.out.println("\n**********************");
+		}
+	}
+	
+	public void saveReport() throws IOException
+	{
+		File reportFile = new File(name + "Report.txt");
+		PrintWriter outputFile = new PrintWriter(reportFile);
+		
+		String absoluteFilePath = reportFile.getAbsolutePath();
+		System.out.println("\nOpen the file located at " + absoluteFilePath);
+		
+		outputFile.close();
 	}
 	
 }
@@ -61,7 +182,7 @@ class Athlete {
 	private double[] dailyCal = new double[7];
 	
 	// Constructor
-	public Athlete(String firstName, String lastName, double height, double weight,
+	public Athlete(String firstName, String lastName, double weight, double height,
 					int age, double[] dailyCal)
 	{
 		this.firstName = firstName;
@@ -153,10 +274,10 @@ class Athlete {
 	
 	public void displayInfo()
 	{
-		System.out.println("Athlete: " + firstName + " " + lastName);
+		System.out.println("\nAthlete: " + firstName + " " + lastName);
 		System.out.println("\tMax Heart Rate: " + maxHeartRate());
-		System.out.printf("%s%.2f", "\tAverage Daily Calories Burned: ", avgCalBurned());
-		System.out.printf("%s%.2f","\n\tBMI: " , calcBMI());
+		System.out.printf("%s%.1f", "\tAverage Daily Calories Burned: ", avgCalBurned());
+		System.out.printf("%s%.1f","\n\tBMI: " , calcBMI());
 		System.out.print("\tCategory: " + categoryBMI());
 	}
 }
