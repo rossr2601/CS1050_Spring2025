@@ -944,6 +944,14 @@ int[][] newArray = new int[5][5];
 ```
 
 ## Module 05: Objects and Classes ##
+- [What is Object-Oriented Programming?](#what-is-object-oriented-programming)
+- [Object State and Behavior](#object-state-and-behavior)
+     - [State](#state-instance-variables)
+     - [Behavior](#behavior-instance-methods)
+- [How Classes and Objects Interact](#how-classes-and-objects-interact)
+    - [Vocabulary](#vocabulary)
+- [Constructors](#constructors)
+- [Instance Variables and Methods](#instance-variables-and-methods)
 
 ### What is Object-Oriented Programming? ###
 
@@ -993,11 +1001,26 @@ Dog Spot = new Dog(Dalmation, White, 2);
 | Constructor | A special method used to "construct" the object |
 | Dot Operator | Operator used to access the data fields and methods of an object `System.in`|
 
-### Constructor ###
+### Constructors ###
 
 A constructor has **exactly** the same name as the class. There is no return type, and you can have multiple different constructors that take in different information. Also known as [**method overloading**](#method-overloading).
 
 ![Constructor Example](TechDoc_Images/ConstructorExample.png)
+
+### Instance Variables and Methods ###
+
+**<ins>Instance Variable</ins>**
+
+- Defined in a class but initialized within a constructor (or other instance methods).
+
+- Scoped to an object, not shared across all instances. Meaning that each instance of an object can have unique attributes.
+
+```java
+public Car(String make, String model, double price)
+
+Car car5 = new Car("Porsche", "Spyder", 164200.00);
+Car car6 = new Car("Hyundai", "Ioniq", 29000.00);
+```
 
 ## Quick References ##
 
