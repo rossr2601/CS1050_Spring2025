@@ -5,6 +5,7 @@
 - [Module 02](#module-02-predefined-classes-methods-and-decision-structures)
 - [Module 03](#module-03-loops-and-software-development)
 - [Module 04](#module-04-arrays-and-files)
+- [Module 05](#module-05-objects-and-classes)
 - [Quick References](#quick-references)
 
 ## Module 01: Programming Fundamentals and Java ##
